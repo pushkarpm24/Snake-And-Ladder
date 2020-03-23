@@ -10,7 +10,7 @@ endPosition=100
 
 #VARIABLES
 playerPosition=0
-
+dicePlayed=0
 
 while [[ $playerPosition -lt $endPosition ]]
 do
@@ -48,5 +48,6 @@ case $choice in
 				fi
 							echo "GOT LADDER.." ;;
 esac
-
+((dicePlayed++))
 done
+echo "Number of times dice played is..:$dicePlayed"
