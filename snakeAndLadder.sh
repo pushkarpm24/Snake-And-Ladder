@@ -12,25 +12,33 @@ endPosition=100
 playerPosition=0
 
 
+while [[ $playerPosition -lt $endPosition ]]
+do
 diceResult=$((RANDOM%6+1))
-echo $diceResult
-
 choice=$((RANDOM%3))
 case $choice in
 			0)
 				#NO PLAY CONDITION
 				playerPosition=$(($playerPosition))
+				echo "position of player is..: $playerPosition"
 				echo "NO PLAY CONDITION.."  ;;
 
 			1)
 				#SNAKE
-				playerPosition=$(($diceResult-$playerPosition))
+				playerPosition=$(($playerPosition-$diceResult))
+				if [[ $playerPosition -lt 0 ]]
+				then
+						playerPosition=0
+							echo "Position of player is..:$playerPosition"
+				fi
+				echo "position of player is..:$playerPosition"
 				echo "GOT SNAKE.."  ;;
 
 			*)
 				#LADDER
 				playerPosition=$(($diceResult+$playerPosition))
+				echo "Position of player is:: $playerPosition"
 				echo "GOT LADDER.."
 esac
 
-echo "Position of player is:: $playerPosition"
+done
