@@ -7,3 +7,6 @@
 #CONSTANTS
 StartPosition=0
 endPosition=100
+
+diceResult=$((RANDOM%6+1))
+echo $diceResult
