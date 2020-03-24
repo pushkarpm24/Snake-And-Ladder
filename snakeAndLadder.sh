@@ -63,13 +63,13 @@ case $choice in
 						elif [[ $player1Position-$playerOneDice -ge 0 && $chance -eq 1 ]]
 						then
 								player1Position=$(($player1Position-$playerOneDice))
-            		elif [[ $player2Position-$playerTwoDice -lt 0 && $chance -eq 2 ]]
-            		then
-                  		player2Position=0
+            					elif [[ $player2Position-$playerTwoDice -lt 0 && $chance -eq 2 ]]
+            					then
+                  						player2Position=0
 
-            		elif [[ $player2Position-$playerTwoDice -ge 0 && $chance -eq 2 ]]
-            		then
-                  		player2Position=$(($player2Position-$playerTwoDice))
+            					elif [[ $player2Position-$playerTwoDice -ge 0 && $chance -eq 2 ]]
+            					then
+                  						player2Position=$(($player2Position-$playerTwoDice))
 						fi
 
 													;;
@@ -84,13 +84,13 @@ case $choice in
 						elif [[ $player1Position+$playerOneDice -gt 100 && $chance -eq 1 ]]
 						then
 								player1Position=$(($player1Position))
-            		elif [[ $player2Position+$playerTwoDice -le 100 && $chance -eq 2 ]]
-            		then
-                  		player2Position=$(($player2Position+$playerTwoDice))
+            					elif [[ $player2Position+$playerTwoDice -le 100 && $chance -eq 2 ]]
+            					then
+                  						player2Position=$(($player2Position+$playerTwoDice))
 
-            		elif [[ $player2Position+$playerTwoDice -gt 100 && $chance -eq 2 ]]
-            		then
-                  		player2Position=$(($player1Position))
+            					elif [[ $player2Position+$playerTwoDice -gt 100 && $chance -eq 2 ]]
+            					then
+                  						player2Position=$(($player1Position))
 
 						fi
 													;;
